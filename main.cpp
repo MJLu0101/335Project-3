@@ -30,6 +30,6 @@ int main(){
         data.push_back(num);
     }
     //stdSort(header,data);
-    //quickSelect1(header,data);
-    quickSelect2(header,data);
+    quickSelect1(header,data);
+    //quickSelect2(header,data);
 }
