@@ -27,7 +27,7 @@ int kthSmallest(std::vector<int>& data,int low, int high, int k){
     else if(k>p){
          return kthSmallest(data, p+1, high,k);
     }
-    return data[p];
+    return INT_MAX;
 }
 
 void quickSelect1 (const std::string & header, std::vector<int>& data){
