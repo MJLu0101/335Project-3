@@ -17,15 +17,15 @@ int kthSmallest(std::vector<int>& data,int low, int high, int k){
     if(low==high){
         return data[low];
     }
-    if(low<high){
+    if(low<high&&k>0){
         int p = MyPartition(data,low,high);
-        if(k == p){
+        if(k-1 == p-1){
             return data[p];
         }
-        else if(k<p){
+        else if(k-1<p-1){
             return kthSmallest(data, low, p-1,k);
         }
-        else if(k>p){
+        else if(k-1>p-1){
             return kthSmallest(data, p+1, high,k);
         }
     }
@@ -36,9 +36,9 @@ void quickSelect1 (const std::string & header, std::vector<int>& data){
     std::cout<<header<<std::endl;
 
     int size=data.size();
-    int median=kthSmallest(data,0,size-1,size/2);
-    int P25=kthSmallest(data,0,size/2-1,size/4);
-    int P75= kthSmallest(data,size/2+1,size-1,3*size/4);
+    int median=kthSmallest(data,0,size-1,size/2-1);
+    int P25=kthSmallest(data,0,size/2-1,size/4-1);
+    int P75= kthSmallest(data,size/2+1,size-1,3*size/4-1);
  
     std::cout << "Min: " << *std::min_element(data.begin(), data.begin() + size / 4) << std::endl;
     std::cout << "P25: " << P25 << std::endl;
