@@ -14,10 +14,10 @@ int MyPartition(std::vector<int>& data, int low, int high)//low is beging  ,high
     return i;
 } 
 int kthSmallest(std::vector<int>& data,int low, int high, int k){
-    if(low==high){
-        return data[low];
-    }
-    if(low<high&&k>0){
+    if(k <= high - low + 1&&k>0){
+        if(low==high){
+            return data[low];
+        }   
         int p = MyPartition(data,low,high);
         int length = p - low + 1;
         if(k == length){
