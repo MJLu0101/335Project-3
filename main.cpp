@@ -4,6 +4,8 @@
 #include <string>
 #include <sstream>
 #include "StdSort.hpp"
+#include "QuickSelect1.hpp"
+#include "QuickSelect2.hpp"
 int main(){
     std::string filename;
     std::cout<<"enter file name: "<<std::endl;
@@ -27,5 +29,7 @@ int main(){
     while (iss >> num) {
         data.push_back(num);
     }
-    stdSort(header,data);
+    //stdSort(header,data);
+    //quickSelect1(header,data);
+    quickSelect2(header,data);
 }
