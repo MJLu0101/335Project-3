@@ -29,7 +29,7 @@ int kthSmallest(std::vector<int>& data,int low, int high, int k){
     else {
         return kthSmallest(data, pi+1, high, k);
     }
-    return data[pi];
+    //return data[pi];
 }
 
 void quickSelect1 (const std::string & header, std::vector<int> data){
