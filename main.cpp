@@ -31,5 +31,5 @@ int main(){
     }
     stdSort(header,data);
     quickSelect1(header,data);
-    //quickSelect2(header,data);
+    quickSelect2(header,data);
 }

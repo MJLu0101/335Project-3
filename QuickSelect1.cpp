@@ -36,11 +36,11 @@ void quickSelect1 (const std::string & header, std::vector<int>& data){
     int median=kthSmallest(data,0,size-1,(size/2)-1);
     //std::cout<<"pi :"<<(size/2)-1<<std::endl;
     //std::cout<<"1/4:"<<(size/4)-1<<std::endl;
-    int P25= kthSmallest(data,0,size-1,(size/4)-1);
+    //int P25= kthSmallest(data,0,size-1,(size/4)-1);
     int P75= kthSmallest(data,0,size-1,(3*size/4)-1);
  
     std::cout << "Min: " << *std::min_element(data.begin(), data.end()) << std::endl;
-    std::cout << "P25: " << P25 << std::endl;
+    //std::cout << "P25: " << P25 << std::endl;
     std::cout << "P50: " << median << std::endl;
     std::cout << "P75: " << P75 << std::endl;
     std::cout << "Max: " << *std::max_element(data.begin(), data.end()) << std::endl;
