@@ -41,7 +41,7 @@ void quickSelectRecursive(std::vector<int>& data,int low, int high, std::vector<
         return;
     }
 }
-void quickSelect2(const std::string& header, std::vector<int> data) {
+void quickSelect2 (const std::string & header, std::vector<int> data) {
     int size = data.size()-1;
     std::vector<int> keys = {0, size/4, size/2, 3*size/4, size};
     quickSelectRecursive(data, 0, size, keys);
