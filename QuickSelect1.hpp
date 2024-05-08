@@ -6,6 +6,6 @@
 #include <algorithm>
 void quickSelect1 (const std::string & header, std::vector<int>& data);
 //help function 
-int MyPartition(std::vector<int>& data, int low, int high) ;
+int Partition(std::vector<int>& data, int low, int high,int pivotIndex);
 int kthSmallest(std::vector<int>& data,int low, int high, int k);
 #endif
