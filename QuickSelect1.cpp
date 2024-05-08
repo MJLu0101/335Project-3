@@ -1,8 +1,8 @@
 #include "QuickSelect1.hpp"
 
-int Partition(std::vector<int>& data, int low, int high, int pivotIndex)//low is beging  ,high is last 
+int Partition(std::vector<int>& data, int low, int high, int pi)//low is beging  ,high is last 
 {      
-    std::swap(data[pivotIndex],data[high]);
+    std::swap(data[pi],data[high]);
     int pivot=data[high];
     int i=low;
     for (int j = low; j <= high - 1; j++) { 

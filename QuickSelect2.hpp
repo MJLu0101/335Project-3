@@ -4,7 +4,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
-
+#include "InsertionSort.hpp"
 void quickSelect2 (const std::string & header, std::vector<int> data);
 //help function 
 int MyPartition(std::vector<int>& data, int low, int high,int pivotIndex);
