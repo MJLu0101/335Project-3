@@ -8,5 +8,5 @@
 void quickSelect1 (const std::string & header, std::vector<int> data);
 //help function 
 int Partition(std::vector<int>& data, int low, int high,int pi);
-int kthSmallest(std::vector<int>& data,int low, int high, int k);
+int quickSelect(std::vector<int>& data,int low, int high, int k);
 #endif

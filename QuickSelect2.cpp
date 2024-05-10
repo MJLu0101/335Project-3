@@ -15,7 +15,7 @@ int MyPartition(std::vector<int>& data, int low, int high, int pivotIndex)//low 
     return i;
 } 
 void quickSelectRecursive(std::vector<int>& data,int low, int high, std::vector<int> keys){
-    if(low<high){
+    if(low<high&&high-low>20){
         int middle=low+(high-low)/2; // Choosing the middle index as pivot
         int pivotindex=MyPartition(data,low,high,middle);
         // Determine which indices are to the left and right of the pivot
@@ -38,7 +38,7 @@ void quickSelectRecursive(std::vector<int>& data,int low, int high, std::vector<
         }
     }
     else{
-        return;
+        insertionSort(data,low,high);
     }
 }
 void quickSelect2 (const std::string & header, std::vector<int> data){
