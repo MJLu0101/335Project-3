@@ -6,6 +6,7 @@
 #include "StdSort.hpp"
 #include "QuickSelect1.hpp"
 #include "QuickSelect2.hpp"
+#include "CountingSort.hpp"
 int main(){
     std::string filename;
     std::cout<<"enter file name: "<<std::endl;
@@ -30,6 +31,7 @@ int main(){
         data.push_back(num);
     }
     stdSort(header,data);
-    quickSelect1(header,data);
-    quickSelect2(header,data);
+    //quickSelect1(header,data);
+    //quickSelect2(header,data);
+    countingSort(header,data);
 }

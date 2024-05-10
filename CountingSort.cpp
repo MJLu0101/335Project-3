@@ -17,9 +17,9 @@ void countingSort (const std::string & header, std::vector<int> data){
     int total=0;
     int size=data.size();
     
-    std::vector<int> targets = {0, size/4-1, size/2-1, 3*size/4-1, size-1};
+    std::vector<int> targets = {1, size/4, size/2, 3*size/4, size};
     int targetsize=targets.size();
-    std::vector<int> result;
+    std::vector<int> result(5);
     int idx=0;
     for(auto i=sortedDatavector.begin();i!=sortedDatavector.end();++i){
         while(idx<targets.size()&&total+i->second>=targets[idx]){
@@ -31,4 +31,11 @@ void countingSort (const std::string & header, std::vector<int> data){
             break;
         }
     }
+    std::cout << header << std::endl;
+    std::cout << "Min: " << result[0] << std::endl;
+    std::cout << "P25: " << result[1] << std::endl;
+    std::cout << "P50: " << result[2] << std::endl;
+    std::cout << "P75: " << result[3] << std::endl;
+    std::cout << "Max: " << result[4] << std::endl;
+    std::cout << "Unique: " << countMap.size() << std::endl;
 }
