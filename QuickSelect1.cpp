@@ -55,7 +55,7 @@ int quickSelect(std::vector<int>& data,int low, int high, int k){
     }
     else{// If the vector size is small 20, use insertion sort and directly access the k-th element
         insertionSort(data,low,high);
-        return data[low+k];
+        return data[k];
     }
 }
 /*Purpose: Utilizes the Quickselect function to find and display the minimum, 25th, 50th, and 75th percentiles, and the maximum of the array.
