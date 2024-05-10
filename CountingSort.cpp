@@ -17,9 +17,18 @@ bool comparePairs(const std::pair<int, int>& a, const std::pair<int, int>& b) {
 }
 // Function to perform counting sort and calculate statistical measures
 void countingSort (const std::string & header, std::vector<int> data){
-    // //time:beging:
-    // auto start=std::chrono::high_resolution_clock::now();
+
    std::unordered_map<int, int> countMap;
+    int total=0;
+    int size=data.size();
+    // Define target indices for minimum, 25%, 50%, 75% and maximum
+    std::vector<int> targets = {1, size/4, size/2, 3*size/4, size};
+    int targetsize=targets.size();
+    std::vector<int> result(5);
+    int idx=0;
+
+    //time:beging:
+    auto start=std::chrono::high_resolution_clock::now();
     // Count frequency of each element in the data
    for(auto i=data.begin();i!=data.end();++i){
     countMap[*i]++;
@@ -31,13 +40,6 @@ void countingSort (const std::string & header, std::vector<int> data){
     }
     // Sort the vector of pairs by the element value
     std::sort(sortedDatavector.begin(),sortedDatavector.end(),comparePairs);
-    int total=0;
-    int size=data.size();
-    // Define target indices for minimum, 25%, 50%, 75% and maximum
-    std::vector<int> targets = {1, size/4, size/2, 3*size/4, size};
-    int targetsize=targets.size();
-    std::vector<int> result(5);
-    int idx=0;
      // Calculate the results based on the sorted data and frequency
     for(auto i=sortedDatavector.begin();i!=sortedDatavector.end();++i){
         while(idx<targets.size()&&total+i->second>=targets[idx]){
@@ -49,6 +51,11 @@ void countingSort (const std::string & header, std::vector<int> data){
             break;
         }
     }
+     //time end:
+    auto end=std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double,std::micro>elapsed=end-start;
+    //std::cout<< "Execution time: "<<elapsed.count()<<" microseconds\n";
+
     // Output the statistical results
     std::cout << header << std::endl;
     std::cout << "Min: " << result[0] << std::endl;
@@ -58,8 +65,4 @@ void countingSort (const std::string & header, std::vector<int> data){
     std::cout << "Max: " << result[4] << std::endl;
     std::cout << "Unique: " << countMap.size() << std::endl;
 
-    //  //time end:
-    // auto end=std::chrono::high_resolution_clock::now();
-    // std::chrono::duration<double,std::micro>elapsed=end-start;
-    // std::cout<< "Execution time: "<<elapsed.count()<<" microseconds\n";
 }

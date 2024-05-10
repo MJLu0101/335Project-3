@@ -64,25 +64,25 @@ Finds the median by targeting the middle index.
 Finds the quartiles by targeting appropriate indices calculated as fractions of the array’s length.
 Directly finds and displays the minimum and maximum using std::min_element and std::max_element.*/
 void quickSelect1 (const std::string & header, std::vector<int> data){
-    //  //time:beging:
-    // auto start=std::chrono::high_resolution_clock::now();
-
-    std::cout<<header<<std::endl;// Output header
     int size=data.size();
+    //time:beging:
+    auto start=std::chrono::high_resolution_clock::now();
+
     int median=quickSelect(data,0,size-1,(size/2)-1);// Find the median
     //std::cout<<"p25:"<<std::endl;
     int P25= quickSelect(data,0,size/2,(size/4)-1);// Find the 25th percentile
     int P75= quickSelect(data,0,size-1,(3*size/4)-1);// Find the 75th percentile
+
+      //time end:
+    auto end=std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double,std::micro>elapsed=end-start;
+    //std::cout<< "Execution time: "<<elapsed.count()<<" microseconds\n";
+
     // Display the results
+    std::cout<<header<<std::endl;// Output header
     std::cout << "Min: " << *std::min_element(data.begin(), data.end()) << std::endl;
     std::cout << "P25: " << P25 << std::endl;
     std::cout << "P50: " << median << std::endl;
     std::cout << "P75: " << P75 << std::endl;
     std::cout << "Max: " << *std::max_element(data.begin(), data.end()) << std::endl;
-
-    // //time end:
-    // auto end=std::chrono::high_resolution_clock::now();
-    // std::chrono::duration<double,std::micro>elapsed=end-start;
-    // std::cout<< "Execution time: "<<elapsed.count()<<" microseconds\n";
-    
 }
