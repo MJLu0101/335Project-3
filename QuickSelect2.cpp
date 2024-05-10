@@ -64,9 +64,9 @@ void quickSelectRecursive(std::vector<int>& data,int low, int high, std::vector<
  It is designed to demonstrate how Quickselect can be used to efficiently find not only the median but also other
  quartiles and extreme values without sorting the entire dataset.*/
 void quickSelect2 (const std::string & header, std::vector<int> data){
-     //time:beging:
-    auto start=std::chrono::high_resolution_clock::now();
-    
+    //  //time:beging:
+    // auto start=std::chrono::high_resolution_clock::now();
+
     int size = data.size()-1;
     std::vector<int> keys = {0, size/4, size/2, 3*size/4, size};// Indices for required statistics
 
@@ -80,8 +80,8 @@ void quickSelect2 (const std::string & header, std::vector<int> data){
     std::cout << "P50: " << data[size/2] << std::endl;
     std::cout << "P75: " << data[3*size/4] << std::endl;
     std::cout << "Max: " << data[size] << std::endl;
-    //time end:
-    auto end=std::chrono::high_resolution_clock::now();
-     std::chrono::duration<double,std::micro>elapsed=end-start;
-     std::cout<< "Execution time: "<<elapsed.count()<<" microseconds\n";
+    // //time end:
+    // auto end=std::chrono::high_resolution_clock::now();
+    //  std::chrono::duration<double,std::micro>elapsed=end-start;
+    //  std::cout<< "Execution time: "<<elapsed.count()<<" microseconds\n";
 }

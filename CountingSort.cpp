@@ -17,8 +17,8 @@ bool comparePairs(const std::pair<int, int>& a, const std::pair<int, int>& b) {
 }
 // Function to perform counting sort and calculate statistical measures
 void countingSort (const std::string & header, std::vector<int> data){
-    //time:beging:
-    auto start=std::chrono::high_resolution_clock::now();
+    // //time:beging:
+    // auto start=std::chrono::high_resolution_clock::now();
    std::unordered_map<int, int> countMap;
     // Count frequency of each element in the data
    for(auto i=data.begin();i!=data.end();++i){
@@ -57,9 +57,9 @@ void countingSort (const std::string & header, std::vector<int> data){
     std::cout << "P75: " << result[3] << std::endl;
     std::cout << "Max: " << result[4] << std::endl;
     std::cout << "Unique: " << countMap.size() << std::endl;
-    
-     //time end:
-    auto end=std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double,std::micro>elapsed=end-start;
-    std::cout<< "Execution time: "<<elapsed.count()<<" microseconds\n";
+
+    //  //time end:
+    // auto end=std::chrono::high_resolution_clock::now();
+    // std::chrono::duration<double,std::micro>elapsed=end-start;
+    // std::cout<< "Execution time: "<<elapsed.count()<<" microseconds\n";
 }
