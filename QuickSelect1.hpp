@@ -16,6 +16,7 @@ such as the minimum, 25th percentile (P25), median (P50), 75th percentile (P75),
 #include <iostream>
 #include <algorithm>
 #include "InsertionSort.hpp"
+#include<chrono>
 /*Purpose: Utilizes the Quickselect function to find and display the minimum, 25th, 50th, and 75th percentiles, and the maximum of the array.
 Details:
 Finds the median by targeting the middle index.

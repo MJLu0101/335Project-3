@@ -30,8 +30,12 @@ int main(){
     while (iss >> num) {
         data.push_back(num);
     }
+    std::cout<<"stdSort:\n";
     stdSort(header,data);
-    //quickSelect1(header,data);
-    //quickSelect2(header,data);
+    std::cout<<"quickSelect1:\n";
+    quickSelect1(header,data);
+    std::cout<<"quickSelect2:\n";
+    quickSelect2(header,data);
+    std::cout<<"countingSort:\n";
     countingSort(header,data);
 }

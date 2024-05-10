@@ -64,8 +64,10 @@ Finds the median by targeting the middle index.
 Finds the quartiles by targeting appropriate indices calculated as fractions of the array’s length.
 Directly finds and displays the minimum and maximum using std::min_element and std::max_element.*/
 void quickSelect1 (const std::string & header, std::vector<int> data){
-    std::cout<<header<<std::endl;// Output header
+     //time:beging:
+    auto start=std::chrono::high_resolution_clock::now();
 
+    std::cout<<header<<std::endl;// Output header
     int size=data.size();
     int median=quickSelect(data,0,size-1,(size/2)-1);// Find the median
     //std::cout<<"p25:"<<std::endl;
@@ -77,4 +79,10 @@ void quickSelect1 (const std::string & header, std::vector<int> data){
     std::cout << "P50: " << median << std::endl;
     std::cout << "P75: " << P75 << std::endl;
     std::cout << "Max: " << *std::max_element(data.begin(), data.end()) << std::endl;
+
+    //time end:
+    auto end=std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double,std::micro>elapsed=end-start;
+    std::cout<< "Execution time: "<<elapsed.count()<<" microseconds\n";
+    
 }
