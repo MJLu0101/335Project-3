@@ -18,8 +18,8 @@ void stdSort(const std::string &header, std::vector<int>data){
     int size=data.size();
     //time end
      auto end=std::chrono::high_resolution_clock::now();
-     std::chrono::duration<double,std::micro>elapsed=end-start;
-     //std::cout<< "Execution time: "<<elapsed.count()<<" microseconds\n";
+    std::chrono::duration<double,std::micro>elapsed=end-start;
+    //std::cout<< "Execution time: "<<elapsed.count()<<" microseconds\n";
 
      // Print the header provided as a description of the output
     std::cout<<header<<std::endl;

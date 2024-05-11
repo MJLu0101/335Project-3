@@ -12,7 +12,7 @@ This code by sort and find he minimum, 25th percentile, median (50th percentile)
 #include <string>
 #include <iostream>
 #include <algorithm>
-#include<chrono>
+#include <chrono>
 /*The stdSort function sorts a given vector of integers in ascending order and
  then prints predefined statistical measures: the minimum, 25th percentile, median
   (50th percentile), 75th percentile, and maximum values.*/
